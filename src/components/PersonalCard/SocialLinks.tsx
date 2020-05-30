@@ -1,6 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
-import { LinkedInIcon, GithubIcon } from "components/svg"
+import { LinkedInIcon, GithubIcon, TerminalIcon } from "components/svg"
 
 const List = styled.ul`
   display: flex;
@@ -26,6 +26,9 @@ const SocialLinks: React.FC = () => {
         <a href="https://www.linkedin.com/in/mikhail-mikheev-a6b5a9160/" rel="noopener noreferrer" target="_blank">
           <LinkedInIcon />
         </a>
+      </ListItem>
+      <ListItem>
+        <TerminalIcon />
       </ListItem>
     </List>
   )
