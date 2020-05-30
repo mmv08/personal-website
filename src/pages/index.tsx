@@ -1,6 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 import Layout from "components/Layout"
+import PersonalCard from "components/PersonalCard"
 
 const SAppContainer = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SAppContainer>
-        <h1>HI</h1>
+        <PersonalCard />
       </SAppContainer>
     </Layout>
   )
