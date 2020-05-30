@@ -2,6 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 import Layout from "components/Layout"
 import PersonalCard from "components/PersonalCard"
+import Terminal from "components/Terminal"
 import { ThemeMode } from "hooks/useDarkMode"
 
 const SAppContainer = styled.div`
@@ -12,11 +13,18 @@ const SAppContainer = styled.div`
 `
 
 const IndexPage: React.FC<{ currentMode: ThemeMode }> = ({ currentMode }) => {
+  const [isTerminalOpen, setIsTerminalOpen] = React.useState(false)
+
+  const toggleTerminal = React.useCallback(() => {
+    setIsTerminalOpen((prev) => !prev)
+  }, [])
+
   return (
     <Layout>
       <SAppContainer>
-        <PersonalCard currentMode={currentMode} />
+        <PersonalCard currentMode={currentMode} toggleTerminal={toggleTerminal} />
       </SAppContainer>
+      <Terminal onClose={toggleTerminal} isOpen={isTerminalOpen} />
     </Layout>
   )
 }
