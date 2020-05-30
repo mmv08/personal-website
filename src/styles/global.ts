@@ -2,10 +2,6 @@ import { Theme } from "./theme"
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
-    html {
-        height: 100%;
-    }
-
     body {
        min-height: 100vh;
        min-height: -webkit-fill-available;
