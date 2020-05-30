@@ -3,28 +3,34 @@ import styled from "styled-components"
 import Link from "components/layout/Link"
 import { Wave } from "./Wave"
 import SocialLinks from "./SocialLinks"
+import { ThemeMode } from "hooks/useDarkMode"
 
-const Animoji = styled.img`
+const Memoji = styled.img<{ hidden?: boolean }>`
   width: 200px;
   height: 200px;
+
+  visibility: ${({ hidden }) => hidden && "hidden"};
 `
 
-const PersonalCard = () => (
-  <div style={{ textAlign: "center" }}>
-    <Animoji src="/animoji.png" alt="Animoji" />
-    <p>
-      Hello{" "}
-      <Wave role="img" aria-label="waving-hand">
-        👋
-      </Wave>
-      <br />
-      I&apos;m <b>Mikhail</b>, Frontend Engineer at{" "}
-      <Link href="https://gnosis.io" target="_blank" rel="noopener noreferrer">
-        Gnosis
-      </Link>
-    </p>
-    <SocialLinks />
-  </div>
-)
+const PersonalCard = ({ currentMode }: { currentMode: ThemeMode }) => {
+  return (
+    <div style={{ textAlign: "center" }}>
+      <Memoji src="/memoji.png" alt="Animoji" hidden={currentMode === "light"} />
+      <Memoji src="/memoji-glasses.png" alt="Animoji" hidden={currentMode === "dark"} />
+      <p>
+        Hello{" "}
+        <Wave role="img" aria-label="waving-hand">
+          👋
+        </Wave>
+        <br />
+        I&apos;m <b>Mikhail</b>, Frontend Engineer at{" "}
+        <Link href="https://gnosis.io" target="_blank" rel="noopener noreferrer">
+          Gnosis
+        </Link>
+      </p>
+      <SocialLinks />
+    </div>
+  )
+}
 
 export default PersonalCard
