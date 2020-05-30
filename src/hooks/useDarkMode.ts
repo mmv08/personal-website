@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react"
 
 export type ThemeMode = "light" | "dark"
 
-export const useDarkMode = (): [ThemeMode, () => void, boolean] => {
+const useDarkMode = (): [ThemeMode, () => void, boolean] => {
   const [theme, setTheme] = useState<ThemeMode>("light")
   const [mounted, setMounted] = useState(false)
 
@@ -21,3 +21,5 @@ export const useDarkMode = (): [ThemeMode, () => void, boolean] => {
   }, [theme])
   return [theme, themeToggler, mounted]
 }
+
+export { useDarkMode }

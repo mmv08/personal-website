@@ -7,6 +7,7 @@ interface Props {
   isOpen: boolean
   onClose: () => void
   children: React.ReactNode
+  windowRef: React.RefObject<React.ElementType | null>
 }
 
 const Container = styled(motion.div)`
@@ -20,7 +21,7 @@ const Container = styled(motion.div)`
   font-family: "Source Code Pro", monospace;
 `
 
-const Window: React.FC<Props> = ({ children, onClose, isOpen }) => {
+const Window: React.FC<Props> = ({ children, onClose, isOpen, windowRef }) => {
   const body = React.useRef(document.body)
 
   return (
@@ -34,6 +35,7 @@ const Window: React.FC<Props> = ({ children, onClose, isOpen }) => {
           transition={{ duration: 0.3 }}
           dragConstraints={body}
           dragMomentum={false}
+          ref={windowRef}
         >
           <ControlBar onClose={onClose} />
           {children}

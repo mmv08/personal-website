@@ -33,7 +33,7 @@ const ControlBar: React.FC<Props> = ({ onClose }) => {
   return (
     <Container>
       <CloseBtn onClick={onClose} />
-      <SessionInfo>guest@mikheevm.com</SessionInfo>
+      <SessionInfo>guest@mikheevm.com: ~</SessionInfo>
     </Container>
   )
 }
