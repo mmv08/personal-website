@@ -20,6 +20,7 @@ const Input = styled.input`
   font-family: "Source Code Pro", monospace;
   margin-left: 5px;
 `
+// https://stackoverflow.com/questions/45583088/move-to-new-line-when-input-field-width-exceeds
 
 const CommandInput: React.FC<Props> = ({ value, historical = false, onChange }) => {
   const inputRef = React.useRef(null)
