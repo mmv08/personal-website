@@ -1,6 +1,8 @@
 import * as React from "react"
 import styled from "styled-components"
+import Link from "components/layout/Link"
 import { Wave } from "./Wave"
+import SocialLinks from "./SocialLinks"
 
 const Animoji = styled.img`
   width: 200px;
@@ -16,11 +18,12 @@ const PersonalCard = () => (
         👋
       </Wave>
       <br />
-      I'm <b>Mikhail</b>, Frontend Engineer at{" "}
-      <a href="https://gnosis.io" target="_blank" rel="noopener noreferrer">
+      I&apos;m <b>Mikhail</b>, Frontend Engineer at{" "}
+      <Link href="https://gnosis.io" target="_blank" rel="noopener noreferrer">
         Gnosis
-      </a>
+      </Link>
     </p>
+    <SocialLinks />
   </div>
 )
 
