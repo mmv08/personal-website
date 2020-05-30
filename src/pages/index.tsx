@@ -7,10 +7,10 @@ const SAppContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 `
 
-const IndexPage = () => {
+const IndexPage: React.FC = () => {
   return (
     <Layout>
       <SAppContainer>
