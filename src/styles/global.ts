@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
        min-height: 100vh;
-       min-height: --webkit-fill-available;
+       min-height: -webkit-fill-available;
        margin: 0px;
        padding: 0px;
        font-family: 'Montserrat', sans-serif;
