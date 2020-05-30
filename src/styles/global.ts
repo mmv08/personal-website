@@ -7,7 +7,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-       height: 100%;
+       min-height: 100vh;
+       min-height: --webkit-fill-available;
        margin: 0px;
        padding: 0px;
        font-family: 'Montserrat', sans-serif;
