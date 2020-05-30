@@ -1,3 +1,4 @@
+import { Theme } from "./theme"
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
@@ -10,19 +11,12 @@ const GlobalStyle = createGlobalStyle`
        margin: 0px;
        padding: 0px;
        font-family: 'Montserrat', sans-serif;
-       background-color: #f7fff7;
-       color: #191818;
+       background-color: ${({ theme }: { theme: Theme }) => theme.colors.primaryBg};
+       color: ${({ theme }: { theme: Theme }) => theme.colors.primary};
     }
 
     #root {
         height: 100%;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        body {
-            background-color: #191818;
-            color: #f7fff7;
-        }
     }
 `
 

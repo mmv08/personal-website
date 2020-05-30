@@ -1,9 +1,15 @@
 import * as React from "react"
+import styled from "styled-components"
 import { Wave } from "./Wave"
+
+const Animoji = styled.img`
+  width: 200px;
+  height: 200px;
+`
 
 const PersonalCard = () => (
   <div style={{ textAlign: "center" }}>
-    <img src="/animoji.png" />
+    <Animoji src="/animoji.png" alt="Animoji" />
     <p>
       Hello{" "}
       <Wave role="img" aria-label="waving-hand">
