@@ -4,7 +4,7 @@ import styled from "styled-components"
 interface Props {
   value: string
   historical?: boolean
-  onChange: () => void
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const Arrow = styled.span`
@@ -23,13 +23,13 @@ const Input = styled.input`
 // https://stackoverflow.com/questions/45583088/move-to-new-line-when-input-field-width-exceeds
 
 const CommandInput: React.FC<Props> = ({ value, historical = false, onChange }) => {
-  const inputRef = React.useRef(null)
+  const inputRef = React.useRef<HTMLInputElement>(null)
 
   const focusInput = React.useCallback(() => {
-    if (inputRef.current) {
+    if (inputRef?.current) {
       inputRef.current.focus()
     }
-  }, [inputRef.current])
+  }, [])
 
   return (
     <>

@@ -2,7 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 
 interface Props {
-  onClose: () => void
+  onClose: (event: React.MouseEvent<HTMLElement>) => void
 }
 
 const Container = styled.div`

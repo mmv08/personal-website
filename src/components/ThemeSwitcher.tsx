@@ -5,6 +5,7 @@ import { ThemeMode } from "hooks/useDarkMode"
 interface Props {
   onClick: () => void
   currentMode: ThemeMode
+  className?: string
 }
 
 // inspired by https://codepen.io/havardob/pen/MWawKVy
@@ -60,13 +61,13 @@ const Container = styled.div`
   }
 `
 
-const ThemeSwitcher: React.FC<Props> = ({ currentMode, onClick }) => {
+const ThemeSwitcher: React.FC<Props> = ({ currentMode, onClick, className = "" }) => {
   const darkModeEnabled = currentMode === "dark"
 
   return (
-    <Container>
-      <input type="checkbox" id="toggle" checked={darkModeEnabled} onChange={onClick} />
-      <label htmlFor="toggle"></label>
+    <Container className={className}>
+      <input type="checkbox" id="toggle" checked={darkModeEnabled} readOnly />
+      <label htmlFor="toggle" onClick={onClick}></label>
     </Container>
   )
 }

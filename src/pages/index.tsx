@@ -15,9 +15,7 @@ const SAppContainer = styled.div`
 const IndexPage: React.FC<{ currentMode: ThemeMode }> = ({ currentMode }) => {
   const [isTerminalOpen, setIsTerminalOpen] = React.useState(false)
 
-  const toggleTerminal = React.useCallback((event) => {
-    event.stopPropagation()
-
+  const toggleTerminal = React.useCallback(() => {
     setIsTerminalOpen((prev) => !prev)
   }, [])
 

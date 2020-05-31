@@ -22,7 +22,7 @@ const MyApp: React.FC<GlobalAppProps> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={themeObj}>
       <GlobalStyle />
-      <ThemeSwitcher currentMode={theme} onClick={themeToggler} />
+      <ThemeSwitcher currentMode={theme} onClick={themeToggler} className="themeSwitcher" />
       <Component {...pageProps} currentMode={theme} />
     </ThemeProvider>
   )

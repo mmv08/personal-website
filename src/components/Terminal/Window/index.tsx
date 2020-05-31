@@ -5,9 +5,9 @@ import styled from "styled-components"
 
 interface Props {
   isOpen: boolean
-  onClose: () => void
+  onClose: (event: React.MouseEvent<HTMLElement>) => void
   children: React.ReactNode
-  windowRef: React.RefObject<React.ElementType | null>
+  windowRef: React.RefObject<HTMLDivElement>
 }
 
 const Container = styled(motion.div)`
@@ -22,7 +22,7 @@ const Container = styled(motion.div)`
 `
 
 const Window: React.FC<Props> = ({ children, onClose, isOpen, windowRef }) => {
-  const body = React.useRef(document.body)
+  const bodyRef = React.useRef<HTMLBodyElement>(document.body as HTMLBodyElement)
 
   return (
     <AnimatePresence>
@@ -33,7 +33,7 @@ const Window: React.FC<Props> = ({ children, onClose, isOpen, windowRef }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
           transition={{ duration: 0.3 }}
-          dragConstraints={body}
+          dragConstraints={bodyRef}
           dragMomentum={false}
           ref={windowRef}
         >

@@ -26,7 +26,7 @@ const SocialLinks: React.FC<{ onTerminalClick: () => void }> = ({ onTerminalClic
         <LinkedInIcon />
       </a>
     </ListItem>
-    <ListItem onClick={onTerminalClick}>
+    <ListItem onClick={onTerminalClick} className="terminalButton">
       <TerminalIcon />
     </ListItem>
   </List>

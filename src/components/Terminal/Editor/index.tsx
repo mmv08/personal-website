@@ -3,11 +3,6 @@ import styled from "styled-components"
 import CommandInput from "./CommandInput"
 import TerminalOutput from "./TerminalOutput"
 
-interface Props {
-  onClose: () => void
-  isOpen: boolean
-}
-
 const EditorContainer = styled.div`
   height: 100%;
   width: 100%;
@@ -18,17 +13,11 @@ const EditorContainer = styled.div`
   box-sizing: border-box;
 `
 
-const Editor: React.FC<Props> = () => {
+const Editor: React.FC = () => {
   const [command, setCommand] = React.useState("")
 
   const handleCommandInputChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setCommand(event.target.value)
-  }, [])
-
-  React.useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("keydown", (event) => {})
-    }
   }, [])
 
   return (
