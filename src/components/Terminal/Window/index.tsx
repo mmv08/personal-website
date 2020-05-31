@@ -15,10 +15,11 @@ const Container = styled(motion.div)`
   top: 200px;
   left: 200px;
   width: 600px;
-  height: 250px;
+  height: 280px;
   border-radius: 5px;
 
   font-family: "Source Code Pro", monospace;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `
 
 const Window: React.FC<Props> = ({ children, onClose, isOpen, windowRef }) => {

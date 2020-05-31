@@ -5,7 +5,7 @@ import TerminalOutput from "./TerminalOutput"
 import { useTerminalEditor } from "./useTerminalEditor"
 
 const EditorContainer = styled.div`
-  height: 100%;
+  height: 259px;
   width: 100%;
   background-color: #eaeaea;
   border-bottom-left-radius: 5px;
