@@ -3,6 +3,7 @@ import styled from "styled-components"
 import CommandInput from "./CommandInput"
 import TerminalOutput from "./TerminalOutput"
 import { useTerminalEditor } from "./useTerminalEditor"
+import { useScrollToBottom } from "hooks/useScrollToBottom"
 
 const EditorContainer = styled.div`
   height: 259px;
@@ -12,13 +13,16 @@ const EditorContainer = styled.div`
   border-bottom-right-radius: 5px;
   padding: 5px 8px;
   box-sizing: border-box;
+  overflow-y: scroll;
 `
 
 const Editor: React.FC = () => {
+  const endRef = React.useRef()
   const { history, currentInput, handleCommandInput, handleCommandSubmit } = useTerminalEditor()
+  useScrollToBottom(endRef, history)
 
   React.useEffect(() => {
-    const listener = (event: React.KeyboardEvent<HTMLElement>) => {
+    const listener = (event: KeyboardEvent) => {
       if (event.keyCode === 13) {
         handleCommandSubmit()
       }
@@ -51,6 +55,7 @@ const Editor: React.FC = () => {
         </>
       ))}
       <CommandInput value={currentInput} onChange={handleCommandInputChange} />
+      <div ref={endRef} />
     </EditorContainer>
   )
 }

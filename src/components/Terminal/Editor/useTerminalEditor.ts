@@ -36,7 +36,11 @@ export const useTerminalEditor = () => {
   const history = useMemo(() => state.history, [state])
   const currentInput = useMemo(() => state.currentInput, [state])
   const handleCommandInput = useCallback((value) => dispatch({ type: COMMAND_CHANGE, payload: { value } }), [])
-  const handleCommandSubmit = useCallback(() => dispatch({ type: COMMAND_SUBMIT, payload: { output } }), [dispatch])
+  const handleCommandSubmit = useCallback(() => {
+    const output = "command not found: " + currentInput
+
+    dispatch({ type: COMMAND_SUBMIT, payload: { output } })
+  }, [dispatch, currentInput])
 
   return {
     history,
