@@ -1,5 +1,14 @@
 import * as React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+
+const ARROW_WIDTH = "10px"
+const INPUT_LEFT_MARGIN = "5px"
+
+const sharedCommandStyles = css`
+  font-size: 14px;
+  font-family: "Source Code Pro", monospace;
+  margin-left: ${INPUT_LEFT_MARGIN};
+`
 
 interface Props {
   value: string
@@ -10,17 +19,21 @@ interface Props {
 const Arrow = styled.span`
   color: ${({ theme }) => theme.colors.linkHover};
   font-weight: 700;
+  width: ${ARROW_WIDTH};
+`
+
+const HistoricalCommand = styled.span`
+  ${sharedCommandStyles};
 `
 
 const Input = styled.input`
+  ${sharedCommandStyles};
+
   background: transparent;
   outline: none;
   border: none;
-  font-size: 14px;
-  font-family: "Source Code Pro", monospace;
-  margin-left: 5px;
+  width: calc(100% - ${INPUT_LEFT_MARGIN} - ${ARROW_WIDTH} - 10px);
 `
-// https://stackoverflow.com/questions/45583088/move-to-new-line-when-input-field-width-exceeds
 
 const CommandInput: React.FC<Props> = ({ value, historical = false, onChange }) => {
   const inputRef = React.useRef<HTMLInputElement>(null)
@@ -35,7 +48,7 @@ const CommandInput: React.FC<Props> = ({ value, historical = false, onChange }) 
     <>
       <Arrow>→</Arrow>
       {historical ? (
-        <span>{value}</span>
+        <HistoricalCommand>{value}</HistoricalCommand>
       ) : (
         <Input autoFocus onBlur={focusInput} ref={inputRef} value={value} onChange={onChange} />
       )}
