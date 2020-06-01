@@ -1,4 +1,5 @@
 import { useReducer, useMemo, useCallback } from "react"
+import { handleCommand } from "./commandHandler"
 
 interface TerminalHistoryEntry {
   command: string
@@ -51,7 +52,7 @@ export const useTerminalEditor = (): TerminalEditor => {
   const currentInput = useMemo(() => state.currentInput, [state])
   const handleCommandInput = useCallback((value) => dispatch({ type: COMMAND_CHANGE, payload: { value } }), [])
   const handleCommandSubmit = useCallback(() => {
-    const output = "command not found: " + currentInput
+    const output = handleCommand(currentInput)
 
     dispatch({ type: COMMAND_SUBMIT, payload: { output } })
   }, [dispatch, currentInput])

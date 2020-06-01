@@ -37,7 +37,6 @@ const Editor: React.FC = () => {
 
   const handleCommandInputChange = React.useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log(event.target.value)
       handleCommandInput(event.target.value)
     },
     [handleCommandInput],
@@ -45,13 +44,11 @@ const Editor: React.FC = () => {
 
   return (
     <EditorContainer>
-      <TerminalOutput>
-        Type <b>help</b> for a list of available commands
-      </TerminalOutput>
+      <TerminalOutput dangerouslySetInnerHTML={{ __html: `Type <b>help</b> for a list of available commands` }} />
       {history.map(({ command: terminalCommand, output }) => (
         <>
           <CommandInput value={terminalCommand} historical />
-          <TerminalOutput>{output}</TerminalOutput>
+          <TerminalOutput dangerouslySetInnerHTML={{ __html: output }} />
         </>
       ))}
       <CommandInput value={currentInput} onChange={handleCommandInputChange} />
