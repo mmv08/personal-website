@@ -10,9 +10,17 @@ const sharedCommandStyles = css`
   margin-left: ${INPUT_LEFT_MARGIN};
 `
 
-interface Props {
+interface InputBasics {
   value: string
-  historical?: boolean
+}
+
+interface HistoricalInput extends InputBasics {
+  historical: true
+  onChange?: undefined
+}
+
+interface Input extends InputBasics {
+  historical?: false | undefined
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -35,7 +43,7 @@ const Input = styled.input`
   width: calc(100% - ${INPUT_LEFT_MARGIN} - ${ARROW_WIDTH} - 10px);
 `
 
-const CommandInput: React.FC<Props> = ({ value, historical = false, onChange }) => {
+const CommandInput: React.FC<Input | HistoricalInput> = ({ value, historical = false, onChange }) => {
   const inputRef = React.useRef<HTMLInputElement>(null)
 
   const focusInput = React.useCallback(() => {

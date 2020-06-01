@@ -17,7 +17,7 @@ const EditorContainer = styled.div`
 `
 
 const Editor: React.FC = () => {
-  const endRef = React.useRef()
+  const endRef = React.useRef<HTMLDivElement>(null)
   const { history, currentInput, handleCommandInput, handleCommandSubmit } = useTerminalEditor()
   useScrollToBottom(endRef, history)
 
