@@ -45,11 +45,11 @@ const Editor: React.FC = () => {
   return (
     <EditorContainer>
       <TerminalOutput dangerouslySetInnerHTML={{ __html: `Type <b>help</b> for a list of available commands` }} />
-      {history.map(({ command: terminalCommand, output }) => (
-        <>
+      {history.map(({ command: terminalCommand, output, createdAt }) => (
+        <React.Fragment key={createdAt}>
           <CommandInput value={terminalCommand} historical />
           <TerminalOutput dangerouslySetInnerHTML={{ __html: output }} />
-        </>
+        </React.Fragment>
       ))}
       <CommandInput value={currentInput} onChange={handleCommandInputChange} />
       <div ref={endRef} />

@@ -4,6 +4,7 @@ import { handleCommand } from "./commandHandler"
 interface TerminalHistoryEntry {
   command: string
   output: string
+  createdAt: number
 }
 
 type History = TerminalHistoryEntry[]
@@ -38,7 +39,10 @@ function reducer(state: State, action: Action): State {
       return {
         ...state,
         currentInput: "",
-        history: [...state.history, { command: state.currentInput, output: action.payload.output }] as History,
+        history: [
+          ...state.history,
+          { command: state.currentInput, output: action.payload.output, createdAt: Date.now() },
+        ] as History,
       }
     default:
       return state

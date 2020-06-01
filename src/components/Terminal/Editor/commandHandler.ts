@@ -1,4 +1,4 @@
-export const AVAILABLE_COMMANDS = ["help", "about", "source", "contact", "works"] as const
+export const AVAILABLE_COMMANDS = ["help", "source", "contact", "works"] as const
 
 type Command = typeof AVAILABLE_COMMANDS[number]
 
@@ -9,9 +9,6 @@ interface Handler {
 
 const commandToHandler: Record<Command, Handler> = {
   help: {
-    output: `Available commands: <b>about</b>, <b>works</b>, <b>contact</b>, <b>source</b>`,
-  },
-  about: {
     output: `Available commands: <b>about</b>, <b>works</b>, <b>contact</b>, <b>source</b>`,
   },
   works: {
