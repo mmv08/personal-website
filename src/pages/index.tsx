@@ -1,9 +1,11 @@
 import * as React from "react"
 import styled from "styled-components"
+import dynamic from "next/dynamic"
 import Layout from "components/Layout"
 import PersonalCard from "components/PersonalCard"
-import Terminal from "components/Terminal"
 import { ThemeMode } from "hooks/useDarkMode"
+
+const Terminal = dynamic(import("../components/Terminal"))
 
 const SAppContainer = styled.div`
   display: flex;
