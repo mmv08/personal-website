@@ -8,7 +8,7 @@ import { useScrollToBottom } from "hooks/useScrollToBottom"
 const EditorContainer = styled.div`
   height: 259px;
   width: 100%;
-  background-color: #eaeaea;
+  background-color: ${({ theme }) => theme.colors.terminalEditorBg};
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: 5px 8px;

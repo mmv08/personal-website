@@ -8,7 +8,7 @@ interface Props {
 const Container = styled.div`
   display: flex;
   align-items: center;
-  background-color: #c9cacf;
+  background-color: ${({ theme }) => theme.colors.terminalControlBarBg};
   padding: 3px 5px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;

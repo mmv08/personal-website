@@ -3,6 +3,8 @@ export const lightTheme = {
     primary: "#191818",
     primaryBg: "#f7fff7",
     linkHover: "#cf5c36",
+    terminalEditorBg: "#eaeaea",
+    terminalControlBarBg: "#c9cacf",
   },
 }
 export const darkTheme = {
@@ -10,6 +12,8 @@ export const darkTheme = {
     primary: "#f7fff7",
     primaryBg: "#191818",
     linkHover: "#cf5c36",
+    terminalEditorBg: "#4a4a4a",
+    terminalControlBarBg: "#84858a",
   },
 }
 

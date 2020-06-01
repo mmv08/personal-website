@@ -8,6 +8,7 @@ const sharedCommandStyles = css`
   font-size: 14px;
   font-family: "Source Code Pro", monospace;
   margin-left: ${INPUT_LEFT_MARGIN};
+  color: ${({ theme }) => theme.colors.primary};
 `
 
 interface InputBasics {

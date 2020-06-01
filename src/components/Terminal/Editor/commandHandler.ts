@@ -9,7 +9,10 @@ interface Handler {
 
 const commandToHandler: Record<Command, Handler> = {
   help: {
-    output: `Available commands: <b>about</b>, <b>works</b>, <b>contact</b>, <b>source</b>`,
+    output: `Available commands: ${AVAILABLE_COMMANDS.reduce(
+      (commandsList, command, index) => `${commandsList}${index > 0 ? "," : ""} <b>${command}</b>`,
+      "",
+    )}`,
   },
   works: {
     output: `<ul>
