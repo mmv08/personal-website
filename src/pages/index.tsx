@@ -15,18 +15,24 @@ const SAppContainer = styled.div`
 `
 
 const IndexPage: React.FC<{ currentMode: ThemeMode }> = ({ currentMode }) => {
+  const [userHasOpenedTerminal, setUserHasOpenedTerminal] = React.useState(false)
   const [isTerminalOpen, setIsTerminalOpen] = React.useState(false)
 
   const toggleTerminal = React.useCallback(() => {
+    if (!userHasOpenedTerminal) {
+      setUserHasOpenedTerminal(true)
+    }
+
     setIsTerminalOpen((prev) => !prev)
-  }, [])
+  }, [userHasOpenedTerminal])
 
   return (
     <Layout>
       <SAppContainer>
         <PersonalCard currentMode={currentMode} toggleTerminal={toggleTerminal} />
       </SAppContainer>
-      <Terminal onClose={toggleTerminal} isOpen={isTerminalOpen} />
+      {/* dirty trick to dynamically import terminal */}
+      {userHasOpenedTerminal && <Terminal onClose={toggleTerminal} isOpen={isTerminalOpen} />}
     </Layout>
   )
 }
