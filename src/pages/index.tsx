@@ -5,7 +5,7 @@ import Layout from "components/Layout"
 import PersonalCard from "components/PersonalCard"
 import { ThemeMode } from "hooks/useDarkMode"
 
-const Terminal = dynamic(import("../components/Terminal"))
+const Terminal = dynamic(import("../components/Terminal"), { ssr: false })
 
 const SAppContainer = styled.div`
   display: flex;
