@@ -2,7 +2,12 @@ export const AVAILABLE_COMMANDS = ["help", "about", "source", "contact", "works"
 
 type Command = typeof AVAILABLE_COMMANDS[number]
 
-const commandToHandler = {
+interface Handler {
+  output: string
+  effect?: () => void
+}
+
+const commandToHandler: Record<Command, Handler> = {
   help: {
     output: `Available commands: <b>about</b>, <b>works</b>, <b>contact</b>, <b>source</b>`,
   },
@@ -32,8 +37,8 @@ const commandToHandler = {
   },
 }
 
-export const handleCommand = (command: Command | string): string => {
-  const commandHandler = commandToHandler[command]
+export const handleCommand = (command: string): string => {
+  const commandHandler = commandToHandler[command as Command]
 
   if (commandHandler) {
     commandHandler.effect?.()
