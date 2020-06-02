@@ -41,17 +41,18 @@ const Input = styled.input`
   background: transparent;
   outline: none;
   border: none;
-  width: calc(100% - ${INPUT_LEFT_MARGIN} - ${ARROW_WIDTH} - 10px);
+  width: calc(100% - ${INPUT_LEFT_MARGIN} - ${ARROW_WIDTH} - 30px);
 `
 
 const CommandInput: React.FC<Input | HistoricalInput> = ({ value, historical = false, onChange }) => {
   const inputRef = React.useRef<HTMLInputElement>(null)
+  const isSmallScreen = useMediaQuery("(max-width: 600px)")
 
   const focusInput = React.useCallback(() => {
-    if (inputRef?.current) {
+    if (inputRef?.current && !isSmallScreen) {
       inputRef.current.focus()
     }
-  }, [])
+  }, [isSmallScreen])
 
   return (
     <>
