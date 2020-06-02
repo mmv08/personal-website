@@ -1,4 +1,4 @@
-import { useReducer, useMemo, useCallback } from "react"
+import * as React from "react"
 import { handleCommand } from "./commandHandler"
 
 interface TerminalHistoryEntry {
@@ -50,12 +50,12 @@ function reducer(state: State, action: Action): State {
 }
 
 export const useTerminalEditor = (): TerminalEditor => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = React.useReducer(reducer, initialState)
 
-  const history: TerminalHistoryEntry[] = useMemo(() => state.history, [state])
-  const currentInput = useMemo(() => state.currentInput, [state])
-  const handleCommandInput = useCallback((value) => dispatch({ type: COMMAND_CHANGE, payload: { value } }), [])
-  const handleCommandSubmit = useCallback(() => {
+  const history: TerminalHistoryEntry[] = React.useMemo(() => state.history, [state])
+  const currentInput = React.useMemo(() => state.currentInput, [state])
+  const handleCommandInput = React.useCallback((value) => dispatch({ type: COMMAND_CHANGE, payload: { value } }), [])
+  const handleCommandSubmit = React.useCallback(() => {
     const output = handleCommand(currentInput)
 
     dispatch({ type: COMMAND_SUBMIT, payload: { output } })

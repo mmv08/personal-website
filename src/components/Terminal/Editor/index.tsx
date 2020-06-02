@@ -6,7 +6,7 @@ import { useTerminalEditor } from "./useTerminalEditor"
 import { useScrollToBottom } from "hooks/useScrollToBottom"
 
 const EditorContainer = styled.div`
-  height: 259px;
+  height: 95%;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.terminalEditorBg};
   border-bottom-left-radius: 5px;

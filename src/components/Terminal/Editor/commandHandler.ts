@@ -20,10 +20,10 @@ const commandToHandler: Record<Command, Handler> = {
         <p><a href="https://uchi.ru">Uchi.ru</a> - World's second most visited education platform</p>
       </li>
       <li>
-        <p><a href="https://simbirsoft.com">SimbirSoft</a> - Software development services for banks and retail companies.</p>
+        <p><a href="https://simbirsoft.com">SimbirSoft</a> - Software development services for banks and retail companies</p>
       </li>
       <li>
-        <p><a href="https://gnosis.io">Gnosis</a> - decentralized prediction market platform and the most secure crypto wallet for Ethereum assets.</p>
+        <p><a href="https://gnosis.io">Gnosis</a> - decentralized prediction market platform and the most secure crypto wallet for Ethereum assets</p>
       </li>`,
   },
   contact: {

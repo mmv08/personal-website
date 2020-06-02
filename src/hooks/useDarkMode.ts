@@ -1,22 +1,22 @@
-import { useState, useEffect, useCallback } from "react"
+import * as React from "react"
 
 export type ThemeMode = "light" | "dark"
 
 const useDarkMode = (): [ThemeMode, () => void, boolean] => {
-  const [theme, setTheme] = useState<ThemeMode>("light")
-  const [mounted, setMounted] = useState(false)
+  const [theme, setTheme] = React.useState<ThemeMode>("light")
+  const [mounted, setMounted] = React.useState(false)
 
-  const themeToggler = useCallback(() => {
+  const themeToggler = React.useCallback(() => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"))
   }, [])
 
-  useEffect(() => {
+  React.useEffect(() => {
     const localTheme = window.localStorage.getItem("theme")
     localTheme && setTheme(localTheme as ThemeMode)
     setMounted(true)
   }, [])
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.localStorage.setItem("theme", theme)
   }, [theme])
   return [theme, themeToggler, mounted]
