@@ -61,7 +61,7 @@ const CommandInput: React.FC<Input | HistoricalInput> = ({ value, historical = f
       {historical ? (
         <HistoricalCommand>{value}</HistoricalCommand>
       ) : (
-        <Input autoFocus onBlur={focusInput} ref={inputRef} value={value} onChange={onChange} />
+        <Input autoFocus onBlur={focusInput} ref={inputRef} value={value} onChange={onChange} autoComplete="off" />
       )}
     </>
   )
