@@ -1,7 +1,7 @@
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import styled from "styled-components"
-// import { useMediaQuery } from "hooks/useMediaQuery"
+import { useMediaQuery } from "hooks/useMediaQuery"
 import ControlBar from "./ControlBar"
 
 interface Props {
