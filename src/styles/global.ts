@@ -1,4 +1,3 @@
-import { Theme } from "./theme"
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
@@ -8,8 +7,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0px;
     padding: 0px;
     font-family: 'Montserrat', sans-serif;
-    background-color: ${({ theme }: { theme: Theme }) => theme.colors.primaryBg};
-    color: ${({ theme }: { theme: Theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.primaryBg};
+    color: ${({ theme }) => theme.colors.primary};
   }
 
   #root {

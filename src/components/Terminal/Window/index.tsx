@@ -34,8 +34,6 @@ const Window: React.FC<Props> = ({ children, onClose, isOpen, windowRef }) => {
   const bodyRef = React.useRef<HTMLBodyElement>(document.body as HTMLBodyElement)
   const isSmallScreen = useMediaQuery("(max-width: 600px)")
 
-  console.log({ isSmallScreen })
-
   return (
     <AnimatePresence>
       {isOpen && (
