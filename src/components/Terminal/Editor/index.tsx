@@ -1,12 +1,13 @@
 import * as React from "react"
 import styled from "styled-components"
+import { useScrollToBottom } from "hooks/useScrollToBottom"
 import CommandInput from "./CommandInput"
 import TerminalOutput from "./TerminalOutput"
 import { useTerminalEditor } from "./useTerminalEditor"
-import { useScrollToBottom } from "hooks/useScrollToBottom"
+import { CONTROL_BAR_HEIGHT } from "../Window/ControlBar"
 
 const EditorContainer = styled.div`
-  height: 95%;
+  height: calc(100% - ${CONTROL_BAR_HEIGHT});
   width: 100%;
   background-color: ${({ theme }) => theme.colors.terminalEditorBg};
   border-bottom-left-radius: 5px;

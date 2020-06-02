@@ -5,6 +5,8 @@ interface Props {
   onClose: (event: React.MouseEvent<HTMLElement>) => void
 }
 
+export const CONTROL_BAR_HEIGHT = "21px"
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -12,6 +14,8 @@ const Container = styled.div`
   padding: 3px 5px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  height: ${CONTROL_BAR_HEIGHT};
+  box-sizing: border-box;
 `
 
 const CloseBtn = styled.button`
@@ -29,13 +33,11 @@ const SessionInfo = styled.p`
   color: ${({ theme }) => theme.colors.primary};
 `
 
-const ControlBar: React.FC<Props> = ({ onClose }) => {
-  return (
-    <Container>
-      <CloseBtn onClick={onClose} />
-      <SessionInfo>guest@mikheevm.com: ~</SessionInfo>
-    </Container>
-  )
-}
+const ControlBar: React.FC<Props> = ({ onClose }) => (
+  <Container>
+    <CloseBtn onClick={onClose} />
+    <SessionInfo>guest@mikheevm.com: ~</SessionInfo>
+  </Container>
+)
 
 export default ControlBar
