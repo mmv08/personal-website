@@ -6,7 +6,7 @@ const useScrollToBottom = (ref: React.MutableRefObject<HTMLElement | null>, dep:
       if (!ref.current) {
         return
       }
-      ref.current.scrollIntoView({ behavior: "smooth" })
+      ref.current.scrollIntoView({ behavior: "smooth", block: "nearest" })
     }
 
     scrollToBottom()
