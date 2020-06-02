@@ -24,9 +24,9 @@ const Container = styled(motion.div)`
 
   @media only screen and (max-width: 600px) {
     width: 100%;
-    top: 50px;
+    top: 0;
     left: 0;
-    height: 400px;
+    height: 100%;
   }
 `
 
