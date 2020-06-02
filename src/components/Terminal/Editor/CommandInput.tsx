@@ -50,10 +50,10 @@ const CommandInput: React.FC<Input | HistoricalInput> = ({ value, historical = f
   const isSmallScreen = useMediaQuery("(max-width: 600px)")
 
   const focusInput = React.useCallback(() => {
-    if (inputRef?.current && !isSmallScreen) {
+    if (inputRef?.current) {
       inputRef.current.focus()
     }
-  }, [isSmallScreen])
+  }, [])
 
   return (
     <>
