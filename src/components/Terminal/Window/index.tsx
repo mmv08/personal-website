@@ -1,7 +1,7 @@
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import styled from "styled-components"
-import { useMediaQuery } from "hooks/useMediaQuery"
+// import { useMediaQuery } from "hooks/useMediaQuery"
 import ControlBar from "./ControlBar"
 
 interface Props {
@@ -32,7 +32,7 @@ const Container = styled(motion.div)`
 
 const Window: React.FC<Props> = ({ children, onClose, isOpen, windowRef }) => {
   const bodyRef = React.useRef<HTMLBodyElement>(document.body as HTMLBodyElement)
-  const isSmallScreen = useMediaQuery("(max-width: 600px)")
+  // const isSmallScreen = useMediaQuery("(max-width: 600px)")
 
   return (
     <AnimatePresence>
