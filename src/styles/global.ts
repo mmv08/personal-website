@@ -1,19 +1,19 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
-    html {
-        height: 100%;
-    }
+  html, body, #__next { height: 100% } 
 
-    body {
-       height: 100%;
-       margin: 0px;
-       padding: 0px;
-    }
+  body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: ${({ theme }) => theme.colors.primaryBg};
+    color: ${({ theme }) => theme.colors.primary};
+  }
 
-    #root {
-        height: 100%;
-    }
+  #root {
+    height: 100%;
+  }
 `
 
 export { GlobalStyle }
