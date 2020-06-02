@@ -32,13 +32,13 @@ const Container = styled(motion.div)`
 
 const Window: React.FC<Props> = ({ children, onClose, isOpen, windowRef }) => {
   const bodyRef = React.useRef<HTMLBodyElement>(document.body as HTMLBodyElement)
-  // const isSmallScreen = useMediaQuery("(max-width: 600px)")
+  const isSmallScreen = useMediaQuery("(max-width: 600px)")
 
   return (
     <AnimatePresence>
       {isOpen && (
         <Container
-          drag
+          drag={!isSmallScreen}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
