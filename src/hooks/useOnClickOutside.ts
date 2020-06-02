@@ -32,7 +32,7 @@ const useOnClickOutside = (
   ref: React.RefObject<HTMLElement>,
   handler: (event: React.MouseEvent<HTMLElement> | TouchEvent | MouseEvent) => void,
   ignoredClassNames?: string[],
-) => {
+): void => {
   React.useEffect(() => {
     const listener = (event: MouseEvent | TouchEvent) => {
       if (
@@ -50,7 +50,6 @@ const useOnClickOutside = (
       handler(event)
     }
 
-    // idk what happens there
     document.addEventListener("mousedown", listener)
     document.addEventListener("touchstart", listener)
 
