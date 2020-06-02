@@ -3,7 +3,7 @@ import styled from "styled-components"
 import CommandInput from "./CommandInput"
 import TerminalOutput from "./TerminalOutput"
 import { useTerminalEditor } from "./useTerminalEditor"
-import { useScrollToBottom } from "hooks/useScrollToBottom"
+// import { useScrollToBottom } from "hooks/useScrollToBottom"
 
 const EditorContainer = styled.div`
   height: 95%;
@@ -19,7 +19,7 @@ const EditorContainer = styled.div`
 const Editor: React.FC = () => {
   const endRef = React.useRef<HTMLDivElement>(null)
   const { history, currentInput, handleCommandInput, handleCommandSubmit } = useTerminalEditor()
-  useScrollToBottom(endRef, history)
+  // useScrollToBottom(endRef, history)
 
   React.useEffect(() => {
     const listener = (event: KeyboardEvent) => {
