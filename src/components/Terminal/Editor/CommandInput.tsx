@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled, { css } from "styled-components"
+import { useMediaQuery } from "hooks/useMediaQuery"
 
 const ARROW_WIDTH = "10px"
 const INPUT_LEFT_MARGIN = "5px"
