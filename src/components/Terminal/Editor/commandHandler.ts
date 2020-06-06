@@ -27,7 +27,7 @@ const commandToHandler: Record<Command, Handler> = {
       </li>`,
   },
   contact: {
-    output: `<a href="mailto:hello@mikheevm.com">hello@mikheevm.com</a>`,
+    output: `<a href="mailto:mveehkim@gmail.com">mveehkim@gmail.com</a>`,
   },
   source: {
     effect: () => {
