@@ -24,7 +24,8 @@ const commandToHandler: Record<Command, Handler> = {
       </li>
       <li>
         <p><a href="https://gnosis.io">Gnosis</a> - decentralized prediction market platform and the most secure crypto wallet for Ethereum assets</p>
-      </li>`,
+      </li>
+    </ul>`,
   },
   contact: {
     output: `<a href="mailto:mveehkim@gmail.com">mveehkim@gmail.com</a>`,
