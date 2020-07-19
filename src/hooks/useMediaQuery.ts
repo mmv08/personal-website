@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 
 // To use only in client-side rendered components
 const useMediaQuery = (mediaQuery: string): boolean => {

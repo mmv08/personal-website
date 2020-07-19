@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { useOnClickOutside } from "hooks/useOnClickOutside"
 import Window from "./Window"
 import Editor from "./Editor"
@@ -10,7 +10,7 @@ interface Props {
 
 const IGNORED_CLICK_CLASSNAMES = ["themeSwitcher", "terminalButton"]
 
-const Terminal: React.FC<Props> = ({ onClose, isOpen }) => {
+const Terminal = ({ onClose, isOpen }: Props): React.ReactElement => {
   const terminalWindow = React.useRef<HTMLDivElement>(null)
 
   useOnClickOutside(terminalWindow, onClose, IGNORED_CLICK_CLASSNAMES)

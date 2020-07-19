@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import styled, { css } from "styled-components"
 import { useMediaQuery } from "hooks/useMediaQuery"
 
@@ -45,7 +45,7 @@ const Input = styled.input`
   width: calc(100% - ${INPUT_LEFT_MARGIN} - ${ARROW_WIDTH} - 30px);
 `
 
-const CommandInput: React.FC<Input | HistoricalInput> = ({ value, historical = false, onChange }) => {
+const CommandInput = ({ value, historical = false, onChange }: Input | HistoricalInput): React.ReactElement => {
   const inputRef = React.useRef<HTMLInputElement>(null)
   const isSmallScreen = useMediaQuery("(max-width: 600px)")
 

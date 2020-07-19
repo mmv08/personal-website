@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import styled from "styled-components"
 import { useScrollToBottom } from "hooks/useScrollToBottom"
 import CommandInput from "./CommandInput"
@@ -17,7 +17,7 @@ const EditorContainer = styled.div`
   overflow-y: scroll;
 `
 
-const Editor: React.FC = () => {
+const Editor = (): React.ReactElement => {
   const endRef = React.useRef<HTMLDivElement>(null)
   const { history, currentInput, handleCommandInput, handleCommandSubmit } = useTerminalEditor()
   useScrollToBottom(endRef, history)

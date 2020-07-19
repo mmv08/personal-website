@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 
 const useScrollToBottom = (ref: React.MutableRefObject<HTMLElement | null>, dep: unknown): void => {
   React.useEffect(() => {

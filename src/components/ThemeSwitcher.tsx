@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import styled from "styled-components"
 import { ThemeMode } from "hooks/useDarkMode"
 
@@ -61,7 +61,7 @@ const Container = styled.div`
   }
 `
 
-const ThemeSwitcher: React.FC<Props> = ({ currentMode, onClick, className = "" }) => {
+const ThemeSwitcher = ({ currentMode, onClick, className = "" }: Props): React.ReactElement => {
   const darkModeEnabled = currentMode === "dark"
 
   return (

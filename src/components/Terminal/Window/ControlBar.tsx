@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import styled from "styled-components"
 
 interface Props {
@@ -33,7 +33,7 @@ const SessionInfo = styled.p`
   color: ${({ theme }) => theme.colors.primary};
 `
 
-const ControlBar: React.FC<Props> = ({ onClose }) => (
+const ControlBar = ({ onClose }: Props): React.ReactElement => (
   <Container>
     <CloseBtn onClick={onClose} />
     <SessionInfo>guest@mikheevm.com: ~</SessionInfo>

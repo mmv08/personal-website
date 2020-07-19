@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import styled from "styled-components"
 import Link from "components/layout/Link"
 import { Wave } from "./Wave"
@@ -17,7 +17,7 @@ const Memoji = styled.img<{ hidden?: boolean }>`
   visibility: ${({ hidden }) => hidden && "hidden"};
 `
 
-const PersonalCard: React.FC<CardProps> = ({ currentMode, toggleTerminal }) => (
+const PersonalCard = ({ currentMode, toggleTerminal }: CardProps): React.ReactElement => (
   <div style={{ textAlign: "center" }}>
     <Memoji src="/memoji.png" alt="Animoji" hidden={currentMode === "light"} />
     <Memoji src="/memoji-glasses.png" alt="Animoji" hidden={currentMode === "dark"} />

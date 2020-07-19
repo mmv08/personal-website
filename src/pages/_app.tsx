@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import { ThemeProvider } from "styled-components"
 import { GlobalStyle } from "styles/global"
 import { useDarkMode } from "hooks/useDarkMode"
@@ -10,13 +10,13 @@ interface GlobalAppProps {
   pageProps: Record<string, unknown>
 }
 
-const MyApp: React.FC<GlobalAppProps> = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }: GlobalAppProps): React.ReactElement => {
   const [theme, themeToggler, mounted] = useDarkMode()
 
   const themeObj = theme === "dark" ? darkTheme : lightTheme
 
   if (!mounted) {
-    return null
+    return <div />
   }
 
   return (

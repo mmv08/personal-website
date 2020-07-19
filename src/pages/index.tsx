@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import styled from "styled-components"
 import dynamic from "next/dynamic"
 import Layout from "components/Layout"
@@ -14,7 +14,7 @@ const SAppContainer = styled.div`
   height: 100%;
 `
 
-const IndexPage: React.FC<{ currentMode: ThemeMode }> = ({ currentMode }) => {
+const IndexPage = ({ currentMode }: { currentMode: ThemeMode }): React.ReactElement => {
   const [userHasOpenedTerminal, setUserHasOpenedTerminal] = React.useState(false)
   const [isTerminalOpen, setIsTerminalOpen] = React.useState(false)
 
