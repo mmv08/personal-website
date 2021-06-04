@@ -24,7 +24,8 @@ const Editor = (): React.ReactElement => {
 
   React.useEffect(() => {
     const listener = (event: KeyboardEvent) => {
-      if (event.keyCode === 13) {
+      console.log({ event })
+      if (event.code === "Enter") {
         handleCommandSubmit()
       }
     }

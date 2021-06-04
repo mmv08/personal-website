@@ -22,7 +22,7 @@ interface HistoricalInput extends InputBasics {
 }
 
 interface Input extends InputBasics {
-  historical?: false | undefined
+  historical?: false
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -48,6 +48,7 @@ const Input = styled.input`
 const CommandInput = ({ value, historical = false, onChange }: Input | HistoricalInput): React.ReactElement => {
   const inputRef = React.useRef<HTMLInputElement>(null)
   const isSmallScreen = useMediaQuery("(max-width: 600px)")
+  const placeholder = isSmallScreen ? "Click to enter a command" : ""
 
   const focusInput = React.useCallback(() => {
     if (inputRef?.current) {
@@ -67,7 +68,7 @@ const CommandInput = ({ value, historical = false, onChange }: Input | Historica
           ref={inputRef}
           value={value}
           onChange={onChange}
-          placeholder={isSmallScreen ? "Click to enter a command" : ""}
+          placeholder={placeholder}
         />
       )}
     </>
